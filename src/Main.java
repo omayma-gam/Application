@@ -55,7 +55,7 @@ public class Main {
         boolean trouve = false;
 
         for (Personne personne : table){
-            if(personne.getId().equals(id)){
+
                 System.out.println("Personne trouvé "+personne);
 
                 System.out.print("Entrer le nouveau ID :");
@@ -83,34 +83,38 @@ public class Main {
                 personne.setId(nouveauemotdepasse);
 
                 System.out.println("Les informations à étét modifier avec succès!!");
-                break;
+                return;
+
             }
 
             System.out.println("Choix invalid ");
             trouve=true;
 
-        }
+
     }
 
     public static void supprimerunutilisateur(){
         Scanner input = new Scanner (System.in);
         System.out.println("Entrer l'ID qui tu peux modifier:");
-        int id = input.nextInt();
+        String id = input.nextLine();
 
         for (Personne personne : table){
-            if(personne.getId().equals(id)){
-                System.out.println(personne);
+            if(personne.getId().equals(id)) {
+                table.remove(personne);
+                System.out.println("le Personne à été supprimé!" + personne);
+                return;
             }
         }
-
+        System.out.println("Aucun personne.");
     }
+
+
     public static void afficherlesutilisateurs(){
-
         Scanner input = new Scanner (System.in);
+        for(Personne personne:table){
+            System.out.println(personne.toString());
+        }
     }
-
-
-
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);

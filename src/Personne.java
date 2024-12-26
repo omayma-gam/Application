@@ -4,7 +4,6 @@ import java.util.Scanner;
  public class Personne {
 
 
-
     String id;
     String nom;
     String prenom;
@@ -18,28 +17,27 @@ import java.util.Scanner;
         this.age = age;
     }
 
-    public static String getId() {
-        return id;
-    }
+     public String getId() {
+         return id;
+     }
 
+     public void setId(String id) {
+         this.id = id;
+     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
+     public void setNom(String nom) {
+         this.nom = nom;
+     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
+     public void setPrenom(String prenom) {
+         this.prenom = prenom;
+     }
 
-    public void setPrenom(String prenom) {
-        this.prenom = prenom;
-    }
+     public void setAge(int age) {
+         this.age = age;
+     }
 
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    @Override
+     @Override
     public String toString() {
         return "Personne" +
                 "Id=" + id +"\n"+
