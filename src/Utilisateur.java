@@ -1,6 +1,6 @@
 
 
-public class Utilisateur extends Personne {
+ public class Utilisateur extends Personne {
     String email;
     String motdepasse;
     Role role;
@@ -9,6 +9,19 @@ public class Utilisateur extends Personne {
         super(id, nom, prenom, age);
         this.email = email;
         this.motdepasse = motdepasse;
+        this.role = role;
+    }
+
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setMotdepasse(String motdepasse) {
+        this.motdepasse = motdepasse;
+    }
+
+    public void setRole(Role role) {
         this.role = role;
     }
 
@@ -24,6 +37,32 @@ public class Utilisateur extends Personne {
                 "Role ="+ role+"\n"+
                 '}';
     }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getMotdepasse() {
+        return motdepasse;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 

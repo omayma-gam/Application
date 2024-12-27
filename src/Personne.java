@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
-
- public class Personne {
+  class Personne {
 
 
     String id;
@@ -44,6 +43,7 @@ import java.util.Scanner;
                 "nom='" + nom + "\n" +
                 "prenom='" + prenom + "\n" +
                 "age=" + age +"\n"+
+
                 '}';
     }
 }

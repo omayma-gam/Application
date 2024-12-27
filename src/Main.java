@@ -2,11 +2,10 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 
-public class Main {
-    public static ArrayList <Personne> table=new ArrayList<>();
+public class Main  {
+    public static ArrayList<Personne> table = new ArrayList<>();
 
-
-    public static void ajouterunutilisateur(){
+    public static void ajouterunutilisateur() {
         Scanner input = new Scanner(System.in);
         System.out.print("Entrer l'ID: ");
         String id = input.nextLine();
@@ -24,79 +23,85 @@ public class Main {
         String s = input.next();
         Role role = new Role(s);
 
-        table.add(new Utilisateur(id, nom, prenom, age, email, motdepasse,role));
+        table.add(new Utilisateur(id, nom, prenom, age, email, motdepasse, role));
     }
 
 
-       public static void rechercherunutilisateur(){
-        Scanner input = new Scanner (System.in);
+    public static void rechercherunutilisateur() {
+        Scanner input = new Scanner(System.in);
         System.out.print("Entrer l'ID:");
         String id = input.nextLine();
         boolean trouve = false;
 
 
-        for (Personne personne : table){
-            if(personne.getId().equals(id)){
-                System.out.println("les informations de personne est :"+personne);
-                trouve = true ;
+        for (Personne personne : table) {
+            if (personne.getId().equals(id)) {
+                System.out.println("les informations de L'utilisateur est :" + personne);
+                trouve = true;
             }
         }
-        if (!trouve){
-            System.out.println("Aucun personne!!");
+        if (!trouve) {
+            System.out.println("Aucun Utilisateur!!");
         }
 
     }
 
 
-    public static void modifierunutilisateur(){
-        Scanner input = new Scanner (System.in);
+      void modifierunutilisateur() {
+        Scanner input = new Scanner(System.in);
         System.out.println("Entrer l'ID a modifier : ");
         String id = input.nextLine();
         boolean trouve = false;
 
-        for (Personne personne : table){
-
-                System.out.println("Personne trouvé "+personne);
+        for (Personne user : table) {
+            if (user.getId().equals(id)) {
+                System.out.println("Personne trouvé " + user);
 
                 System.out.print("Entrer le nouveau ID :");
-                String nouveauid=input.nextLine();
-                personne.setId(nouveauid);
+                String nouveauid = input.nextLine();
+                user.setId(nouveauid);
 
                 System.out.print("Entrer le nouveau Nom :");
-                String nouveaunom =input.nextLine();
-                personne.setId(nouveaunom);
+                String nouveaunom = input.nextLine();
+                user.setNom(nouveaunom);
 
                 System.out.print("Entrer le nouveau Prenom :");
-                String nouveauprenom=input.nextLine();
-                personne.setId(nouveauprenom);
+                String nouveauprenom = input.nextLine();
+                user.setPrenom(nouveauprenom);
 
                 System.out.print("Entrer le nouveau Age :");
-                String nouveauage =input.nextLine();
-                personne.setId(nouveauage);
+                int nouveauage = input.nextInt();
+                user.setAge(nouveauage);
 
                 System.out.print("Entrer le nouveau Email :");
-                String nouveauemail =input.nextLine();
-                personne.setId(nouveauemail);
+                String nouveauemail = input.nextLine();
+
+                user.setEmail(nouveauemail);
+
 
                 System.out.print("Entrer le nouveau Mot de passe :");
-                String nouveauemotdepasse =input.nextLine();
-                personne.setId(nouveauemotdepasse);
+                String nouveauemotdepasse = input.nextLine();
+                user.setMotdepasse(nouveauemotdepasse);
+
+                System.out.print("Entrer le nouveau Role :\n1.Administrateur\n2.Client\n3.Employé\n");
+                String s = input.next();
+                Role role = new Role(s);
+                user.setRole(role);
 
                 System.out.println("Les informations à étét modifier avec succès!!");
+                trouve=true;
                 return;
-
-
             }
-
+        }
+        if(!trouve) {
             System.out.println("Choix invalid ");
-            trouve=true;
-
-
+        }
     }
+
 
     public static void supprimerunutilisateur(){
         Scanner input = new Scanner (System.in);
-        System.out.println("Entrer l'ID qui tu peux modifier:");
+        System.out.println("Entrer l'ID qui tu peux Supprimer:");
         String id = input.nextLine();
 
         for (Personne personne : table){
@@ -111,7 +116,6 @@ public class Main {
 
 
     public static void afficherlesutilisateurs(){
-        Scanner input = new Scanner (System.in);
         for(Personne personne:table){
             System.out.println(personne.toString());
         }
