@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 
 public class Main  {
-    public static ArrayList<Personne> table = new ArrayList<>();
+    public static ArrayList<Utilisateur> table = new ArrayList<>();
 
     public static void ajouterunutilisateur() {
         Scanner input = new Scanner(System.in);
@@ -47,13 +47,13 @@ public class Main  {
     }
 
 
-      void modifierunutilisateur() {
+    public static   void modifierunutilisateur() {
         Scanner input = new Scanner(System.in);
         System.out.println("Entrer l'ID a modifier : ");
         String id = input.nextLine();
         boolean trouve = false;
 
-        for (Personne user : table) {
+        for (Utilisateur user : table) {
             if (user.getId().equals(id)) {
                 System.out.println("Personne trouvé " + user);
 
@@ -109,6 +109,7 @@ public class Main  {
                 table.remove(personne);
                 System.out.println("le Personne à été supprimé!" + personne);
                 return;
+
             }
         }
 
